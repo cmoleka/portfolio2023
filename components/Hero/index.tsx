@@ -2,7 +2,7 @@ import { ButtonDark } from "@components/Buttons";
 import Image from "next/image";
 import HeroSymbol from "@assets/symbol.svg";
 import type { HeroProps } from "@pTypes/uiTypes";
-import { HOMEPAGE_CONTENT } from "@utils/constants";
+import { PAGES_CONTENT_CONST } from "@utils/constants";
 
 const HeroComponent = ({
   title,
@@ -14,7 +14,7 @@ const HeroComponent = ({
     <div className="flex w-full flex-col items-center md:flex-row">
       <div className="flex w-full flex-col space-y-6 md:w-5/6">
         <label className="text-sm uppercase text-turquoise">
-          {HOMEPAGE_CONTENT.heroLabel}
+          {PAGES_CONTENT_CONST.heroLabel}
         </label>
         <h1 className="text-4xl font-bold text-white   md:text-6xl">{title}</h1>
         <p className="text-base text-white/75">{description}</p>

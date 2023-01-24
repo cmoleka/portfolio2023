@@ -40,3 +40,51 @@ export type HomeContent = {
     };
   };
 };
+
+export type AboutContent = {
+  hero: {
+    title: string;
+    description: string;
+  };
+  sectionAboutMe: {
+    heading: string;
+    description: string;
+    ctaLabel: string;
+    ctaHref: string;
+  };
+  sectionDetailOne: {
+    title: string;
+    description: string;
+  };
+  sectionDetailTwo: {
+    title: string;
+    description: string;
+  };
+};
+
+export type ProjectContent = {
+  hero: {
+    description: string;
+  };
+  projects: {
+    title: string;
+    description: string;
+    labels: string[];
+    ctaHref?: string;
+    ctaGithub?: string;
+    image?: string;
+    isFeatured?: boolean;
+  }[];
+};
+
+export type ContactContent = {
+  hero: {
+    description: string;
+  };
+  sectionDetailOne: {
+    title: string;
+  };
+  sectionDetailTwo: {
+    title: string;
+  };
+};

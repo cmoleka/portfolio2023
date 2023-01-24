@@ -27,8 +27,13 @@ export const SOCIAL_LINKS = [
   },
 ] as const;
 
-export const HOMEPAGE_CONTENT = {
+export const PAGES_CONTENT_CONST = {
   heroLabel: "Introduction",
+  featuredProjectsLabel: "Featured Projects",
+  aboutMeLabel: "About Me",
+  projectsLabel: "Explore my projects",
+  contactMeLabel: "Contact Me",
+  workExperienceLabel: "Work Experience",
   footerHeading: "Lets create something great together",
   footerCtaLabel: "Contact me",
   footerCtaHref: "/contact",
