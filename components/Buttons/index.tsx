@@ -1,7 +1,8 @@
-// import type { FC } from "react";
+"use client";
 import type { ButtonProps } from "@pTypes/uiTypes";
 import classNames from "classnames";
 import Link from "next/link";
+import { motion as m } from "framer-motion";
 
 export const ButtonWhite = ({ label, buttonHref }: ButtonProps) => {
   return (
@@ -11,8 +12,8 @@ export const ButtonWhite = ({ label, buttonHref }: ButtonProps) => {
       }}
       passHref
     >
-      <button className="flex h-fit w-fit items-center justify-center border-2 border-white bg-white px-8 py-3 hover:bg-gray-100">
-        <span className="inline-block w-full text-sm font-semibold capitalize text-gray-800">
+      <button className="flex h-fit w-fit items-center justify-center border-2 border-white bg-white px-8 py-3 transition delay-100 duration-300 ease-in-out hover:bg-gray-200">
+        <span className=" w-full text-sm font-semibold capitalize text-charcoal">
           {label}
         </span>
       </button>
@@ -35,10 +36,11 @@ export const ButtonDark = ({ secondary, label, buttonHref }: ButtonProps) => {
       href={{
         pathname: buttonHref,
       }}
+      scroll={false}
       passHref
     >
       <button
-        className={` ${buttonClasses} flex h-fit w-fit items-center justify-center border-2 border-turquoise  px-8 py-3`}
+        className={` ${buttonClasses} flex h-fit w-fit items-center justify-center border-2 border-turquoise  px-8 py-3 transition delay-100 duration-300 ease-in-out`}
       >
         <span
           className={`${textClasses} inline-block w-full text-sm font-semibold capitalize `}
@@ -64,13 +66,19 @@ export const ButtonWithIcon = ({
       href={{
         pathname: buttonHref,
       }}
+      scroll={false}
       passHref
     >
       <button className="flex h-fit w-fit items-center justify-start space-x-4  py-3  text-white hover:text-gray-300">
-        <span className={`w-full text-sm ${textClasses} capitalize`}>
+        <m.span
+          whileHover={{ paddingRight: 4 }}
+          className={`w-full text-sm ${textClasses} capitalize`}
+        >
           {label}
-        </span>
-        <span className="">&#8594;</span>
+        </m.span>
+        <m.span whileHover={{ paddingLeft: 4 }} className="">
+          &#8594;
+        </m.span>
       </button>
     </Link>
   );

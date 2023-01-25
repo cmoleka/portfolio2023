@@ -1,3 +1,5 @@
+import type { CardWithSkillsProps } from "./uiTypes";
+
 export type HomeContent = {
   hero: {
     title: string;
@@ -22,11 +24,7 @@ export type HomeContent = {
   cardSectionTwo: {
     heading: string;
     description: string;
-    badges: {
-      frameworks: string[];
-      languages: string[];
-      database: string[];
-    };
+    items: CardWithSkillsProps["items"];
     ctaLabel: string;
     ctaHref: string;
   };

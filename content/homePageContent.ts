@@ -28,11 +28,20 @@ const HomePageContent: HomeContent = {
     heading: "Technologies I'm working with",
     description:
       "It is important to be versatile with the tools we use, while also not being limited to them. Some projects require learning and adaptation, which I am good at. This has enabled me to learn new technologies and integrate them into my workflow, giving me more choices and skills to use depending on the scope of the task.",
-    badges: {
-      frameworks: ["Vue", "React", "NextJS", "NuxtJS"],
-      languages: ["TypeScript", "JavaScript", "Python"],
-      database: ["MongoDB", "PostgreSQL"],
-    },
+    items: [
+      {
+        title: "frameworks",
+        skills: ["Vue", "React", "NextJS", "NuxtJS"],
+      },
+      {
+        title: "languages",
+        skills: ["TypeScript", "JavaScript", "Python"],
+      },
+      {
+        title: "database",
+        skills: ["MongoDB", "PostgreSQL"],
+      },
+    ],
     ctaLabel: "contact me",
     ctaHref: "/contact",
   },

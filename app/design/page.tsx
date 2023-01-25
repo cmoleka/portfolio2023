@@ -1,5 +1,4 @@
 import type { FC } from "react";
-
 import { ButtonWhite, ButtonDark, ButtonWithIcon } from "@components/Buttons";
 
 const DesignPage: FC = () => {
@@ -27,11 +26,14 @@ const DesignPage: FC = () => {
           <div className="ml-2 h-5 w-5 rounded-full bg-charcoal" />
         </div>
       </div>
-      <h1 className="text-2xl font-bold text-white">Buttons</h1>
-      <ButtonWhite label="Hello" buttonHref="/" />
-      <ButtonDark label="Hello" buttonHref="/" />
-      <ButtonDark secondary label="Hello" buttonHref="/" />
-      <ButtonWithIcon label="Hello" buttonHref="/" />
+      <hr />
+      <div className="flex flex-col space-y-4">
+        <h1 className="text-2xl font-bold text-white">Buttons</h1>
+        <ButtonWhite label="Hello" buttonHref="/" />
+        <ButtonDark label="Hello" buttonHref="/" />
+        <ButtonDark secondary label="Hello" buttonHref="/" />
+        <ButtonWithIcon label="Hello" buttonHref="/" />
+      </div>
       <hr className="h-1 bg-white " />
       <span className="text-2xl font-bold text-white">Typography</span>
       <span className="text-xl font-bold text-white">Headings</span>

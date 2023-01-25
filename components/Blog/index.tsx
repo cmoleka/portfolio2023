@@ -22,6 +22,7 @@ export const FeatureBlogPost = ({
         href={{
           pathname: `/blog/${slug}`,
         }}
+        scroll={false}
       >
         <div className="flex w-full justify-center">
           <div className="relative flex h-fit w-full flex-col p-4">
@@ -60,6 +61,7 @@ export const BlogPost = ({
       href={{
         pathname: `/blog/${slug}`,
       }}
+      scroll={false}
     >
       <div className="h-fit w-full space-y-4 rounded-md bg-gray-800 p-4 shadow-md hover:bg-gray-800 md:bg-gray-900">
         <h2 className="text-lg font-bold capitalize text-turquoise">{title}</h2>
@@ -96,6 +98,7 @@ export const BlogSideBar = ({ labels }: BlogPostSideBarProps) => {
             href={{
               pathname: `/blog/tags/${topic.slug}`,
             }}
+            scroll={false}
           >
             <span className="text-sm capitalize text-white/75">
               {topic.name}

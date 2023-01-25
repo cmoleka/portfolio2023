@@ -108,3 +108,10 @@ export type BlogPostTagsProps = {
   slug: string;
   description: string;
 };
+
+export type CardWithSkillsProps = {
+  items: {
+    title: string;
+    skills: string[];
+  }[];
+};
