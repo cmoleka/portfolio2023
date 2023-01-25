@@ -22,7 +22,7 @@ const HomePageContent: HomeContent = {
     ctaLabel: "contact me",
     ctaHref: "/contact",
     ctaLabelSecondary: "explore other projects",
-    ctaHrefSecondary: "/portfolio",
+    ctaHrefSecondary: "/projects",
   },
   cardSectionTwo: {
     heading: "Technologies I'm working with",
@@ -42,7 +42,7 @@ const HomePageContent: HomeContent = {
       ctaLabel: "contact me",
       ctaHref: "/contact",
       ctaLabelSecondary: "explore my work",
-      ctaHrefSecondary: "/portfolio",
+      ctaHrefSecondary: "/projects",
     },
   },
 };

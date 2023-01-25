@@ -88,3 +88,12 @@ export type ContactContent = {
     title: string;
   };
 };
+
+export type BlogContent = {
+  hero: {
+    description: string;
+  };
+  tags: {
+    description: string;
+  };
+};

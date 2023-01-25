@@ -38,7 +38,7 @@ export const ButtonDark = ({ secondary, label, buttonHref }: ButtonProps) => {
       passHref
     >
       <button
-        className={` ${buttonClasses} flex h-fit w-fit items-center justify-center border-2 border-[#4ECDC4]  px-8 py-3`}
+        className={` ${buttonClasses} flex h-fit w-fit items-center justify-center border-2 border-turquoise  px-8 py-3`}
       >
         <span
           className={`${textClasses} inline-block w-full text-sm font-semibold capitalize `}

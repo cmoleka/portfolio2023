@@ -11,12 +11,14 @@ export const HeaderComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
     <>
       <header className="container mx-auto flex flex-row items-center space-x-6 divide-x divide-white px-6">
         <div className="flex flex-row items-center">
-          <Image
-            src={Logo}
-            alt="logo"
-            className="h-16 w-16 md:h-auto md:w-auto"
-            sizes="(max-width: 768px) 20vw, (min-width: 1024) 100%"
-          />
+          <Link href={{ pathname: "/" }}>
+            <Image
+              src={Logo}
+              alt="logo"
+              className="h-16 w-16 md:h-auto md:w-auto"
+              sizes="(max-width: 768px) 20vw, (min-width: 1024) 100%"
+            />
+          </Link>
         </div>
         <nav className="flex flex-row space-x-4 pl-6">
           <span
@@ -36,12 +38,14 @@ export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
     <div className="flex h-screen w-full flex-col space-y-10 bg-gradient-to-br from-turquoise-dark  to-gray-900 p-2 md:p-8">
       <header className="container mx-auto flex flex-row items-center space-x-6 divide-x divide-white px-6">
         <div className="flex flex-row items-center">
-          <Image
-            src={Logo}
-            alt="logo"
-            className="h-16 w-16 md:h-auto md:w-auto"
-            sizes="(max-width: 768px) 20vw, (min-width: 1024) 100%"
-          />
+          <Link href={{ pathname: "/" }}>
+            <Image
+              src={Logo}
+              alt="logo"
+              className="h-16 w-16 md:h-auto md:w-auto"
+              sizes="(max-width: 768px) 20vw, (min-width: 1024) 100%"
+            />
+          </Link>
         </div>
         <nav className="flex flex-row space-x-4 pl-6">
           <span
@@ -83,10 +87,10 @@ export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
         <ul className=" flex flex-row space-x-10">
           {SOCIAL_LINKS.map((item, index) => (
             <li key={index} className="flex flex-row space-x-4">
-              <a
+              <Link
                 href={item.href}
+                rel="noopener noreferrer"
                 target="_blank"
-                rel="noreferrer"
                 className="relative h-14 w-14 md:h-6 md:w-6"
               >
                 <Image
@@ -101,7 +105,7 @@ export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
                   width={24}
                   height={24}
                 />
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

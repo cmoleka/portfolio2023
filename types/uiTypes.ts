@@ -63,3 +63,48 @@ export type ContactFormRefType = {
   email: string;
   message: string;
 };
+
+export type BlogPostProps = {
+  id?: string;
+  title: string;
+  slug: string;
+  published_at: string;
+  custom_excerpt?: string;
+  feature_image?: string;
+  html?: string;
+  primary_author?: [
+    {
+      id: string;
+      name: string;
+      slug: string;
+      profile_image: string;
+    }
+  ];
+  tags?: [
+    {
+      id: string;
+      name: string;
+      slug: string;
+      visibility: string;
+    }
+  ];
+  excerpt?: string;
+};
+
+export type BlogPostsTimelineProps = {
+  posts: BlogPostProps[];
+};
+
+export type BlogPostSideBarProps = {
+  labels: {
+    name: string;
+    slug: string;
+    description: string;
+  }[];
+};
+
+export type BlogPostTagsProps = {
+  name: string;
+  slug: string;
+  description: string;
+};

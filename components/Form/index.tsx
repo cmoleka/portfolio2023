@@ -59,7 +59,7 @@ export const ContactForm = () => {
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
-    fetch("https://formspree.io/f/xayzngwv", {
+    fetch(`${process.env.FORMSPREE_ENDPOINT}`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": "*",

@@ -25,6 +25,8 @@ export const ProjectCard = ({
             href={{
               pathname: ctaGithub,
             }}
+            rel="noopener noreferrer"
+            target="_blank"
             passHref
           >
             <span className="text-sm font-bold text-turquoise after:content-['_↗']">
@@ -37,6 +39,8 @@ export const ProjectCard = ({
             href={{
               pathname: ctaHref,
             }}
+            rel="noopener noreferrer"
+            target="_blank"
             passHref
           >
             <span className="text-sm font-bold text-turquoise after:content-['_↗']">
@@ -83,6 +87,8 @@ export const FeaturedProjectCard = ({
                   href={{
                     pathname: ctaGithub,
                   }}
+                  rel="noopener noreferrer"
+                  target="_blank"
                   passHref
                 >
                   <span className="text-sm font-bold text-turquoise after:content-['_↗']">
@@ -95,6 +101,8 @@ export const FeaturedProjectCard = ({
                   href={{
                     pathname: ctaHref,
                   }}
+                  rel="noopener noreferrer"
+                  target="_blank"
                   passHref
                 >
                   <span className="text-sm font-bold text-turquoise after:content-['_↗']">
