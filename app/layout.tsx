@@ -42,8 +42,8 @@ const RootLayout = ({ children }: LayoutProps) => {
   return (
     <html lang="en">
       <head />
-      <body className="bg-gray-900">
-        <div className="flex flex-col space-y-10  md:space-y-20 md:bg-gradient-to-br  md:from-turquoise-dark">
+      <body className="bg-gray-900 bg-no-repeat md:bg-gradient-to-b md:from-turquoise-dark md:to-gray-900">
+        <div className="container mx-auto flex  flex-col space-y-10  md:space-y-20 ">
           <AnimatePresence mode="wait">
             {menuOpen && <MenuComponent toggleMenu={toggleMenu} />}
           </AnimatePresence>

@@ -43,7 +43,7 @@ export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5 }}
       exit={{ opacity: 0 }}
-      className="flex h-screen w-full flex-col space-y-10 bg-gradient-to-br from-turquoise-dark  to-gray-900 p-2 md:p-8"
+      className="flex h-screen w-full flex-col space-y-10  p-2 md:p-8"
     >
       <header className="container mx-auto flex flex-row items-center space-x-6 divide-x divide-white px-6">
         <div className="flex flex-row items-center">
