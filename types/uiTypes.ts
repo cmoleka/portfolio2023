@@ -1,4 +1,4 @@
-import type { ChangeEvent, ReactNode, RefObject } from "react";
+import type { ChangeEvent, ReactNode } from "react";
 
 export type LayoutProps = {
   children: ReactNode;
@@ -107,4 +107,11 @@ export type BlogPostTagsProps = {
   name: string;
   slug: string;
   description: string;
+};
+
+export type CardWithSkillsProps = {
+  items: {
+    title: string;
+    skills: string[];
+  }[];
 };

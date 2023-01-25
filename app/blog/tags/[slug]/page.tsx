@@ -40,6 +40,7 @@ const BlogSlugPage = async ({
             href={{
               pathname: "/blog",
             }}
+            scroll={false}
           >
             <h3 className="text-xl font-bold text-white before:text-turquoise before:content-['<-']">
               {PAGES_CONTENT_CONST.blogGoBackLabel}

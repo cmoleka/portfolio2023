@@ -1,10 +1,10 @@
 import HeroComponent from "@components/Hero";
 import {
   CardWithHeadingTextOneButton,
+  CardWithSkills,
   CardWithTextAndOneButton,
   CardWithTextAndTwoButtons,
 } from "@components/Cards";
-import { Badge } from "@components/Badge";
 import ProjectContent from "@content/ProjectsPageContent";
 import HomePageContent from "@content/homePageContent";
 import { FeaturedProjectCard } from "@components/Projects";
@@ -69,32 +69,7 @@ const HomePage = () => {
           buttonLabel={HomePageContent.cardSectionTwo.ctaLabel}
           buttonHref={HomePageContent.cardSectionTwo.ctaHref}
         />
-        <div className="flex w-full flex-col flex-wrap space-y-4 md:w-3/6">
-          <h3 className="text-lg font-bold text-white">Frameworks</h3>
-          <div className="flex flex-wrap items-center  justify-start gap-6 ">
-            {HomePageContent.cardSectionTwo.badges.frameworks.map(
-              (badge, index) => (
-                <Badge key={index} label={badge} />
-              )
-            )}
-          </div>
-          <h3 className="text-lg font-bold text-white">Programing Languages</h3>
-          <div className="flex flex-wrap items-center  justify-start gap-6 ">
-            {HomePageContent.cardSectionTwo.badges.languages.map(
-              (badge, index) => (
-                <Badge key={index} label={badge} />
-              )
-            )}
-          </div>
-          <h3 className="text-lg font-bold text-white">Data Bases</h3>
-          <div className="flex flex-wrap items-center  justify-start gap-6 ">
-            {HomePageContent.cardSectionTwo.badges.database.map(
-              (badge, index) => (
-                <Badge key={index} label={badge} />
-              )
-            )}
-          </div>
-        </div>
+        <CardWithSkills items={HomePageContent.cardSectionTwo.items} />
       </section>
     </div>
   );

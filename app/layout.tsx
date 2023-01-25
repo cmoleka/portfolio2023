@@ -5,34 +5,67 @@ import { AnalyticsWrapper } from "@components/analytics";
 import { HeaderComponent, MenuComponent } from "@components/Header";
 import FooterComponent from "@components/Footer";
 import { useState } from "react";
-import { AnimatePresence } from 'framer-motion'
+import { motion as m, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+
+declare const window: any;
 
 const RootLayout = ({ children }: LayoutProps) => {
+  const pathName = usePathname();
+
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+      y: 0,
+      transition: { delay: 0.5, duration: 0.5 },
+    },
+    enter: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: { delay: 0.7, duration: 0.5 },
+    },
+    exit: {
+      opacity: 0,
+      x: 0,
+      y: 0,
+      transition: { duration: 0.25 },
+    },
+  };
 
   return (
     <html lang="en">
       <head />
       <body className="bg-gray-900">
-        <div
-          className="flex flex-col space-y-10  md:space-y-20 md:bg-gradient-to-br  md:from-turquoise-dark"
-        >
-          <AnimatePresence>
-            {menuOpen && (
-              <MenuComponent toggleMenu={toggleMenu} />
-            )}
+        <div className="flex flex-col space-y-10  md:space-y-20 md:bg-gradient-to-br  md:from-turquoise-dark">
+          <AnimatePresence mode="wait">
+            {menuOpen && <MenuComponent toggleMenu={toggleMenu} />}
           </AnimatePresence>
           {!menuOpen && (
             <>
               <HeaderComponent toggleMenu={toggleMenu} />
-              <main
-                className="h-full w-full">
-                {children}
-              </main>
+              <AnimatePresence
+                mode="wait"
+                onExitComplete={() => window.scrollTo(0, 0)}
+              >
+                <m.main
+                  key={pathName}
+                  variants={variants}
+                  initial="hidden"
+                  animate="enter"
+                  exit="exit"
+                  transition={{ type: "linear" }}
+                  className="h-full w-full"
+                >
+                  {children}
+                </m.main>
+              </AnimatePresence>
               <FooterComponent />
             </>
           )}
