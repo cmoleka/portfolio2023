@@ -5,11 +5,12 @@ import { SITE_NAVIGATION, SOCIAL_LINKS } from "@utils/constants";
 import GITHUBLOGO from "@assets/icons/github-logo.png";
 import LINKEDINLOGO from "@assets/icons/linkedin-logo.png";
 import TWITTERLOGO from "@assets/icons/twitter-logo.png";
+import { motion as m } from 'framer-motion'
 
 export const HeaderComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
   return (
     <>
-      <header className="container mx-auto flex flex-row items-center space-x-6 divide-x divide-white px-6">
+      <header className="container mx-auto flex flex-row items-center space-x-6 divide-x divide-white px-6 p-2 md:p-8">
         <div className="flex flex-row items-center">
           <Link href={{ pathname: "/" }}>
             <Image
@@ -33,9 +34,16 @@ export const HeaderComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
   );
 };
 
-export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
+export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void; }) => {
+
   return (
-    <div className="flex h-screen w-full flex-col space-y-10 bg-gradient-to-br from-turquoise-dark  to-gray-900 p-2 md:p-8">
+    <m.div
+      key="menuOpen"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      exit={{ opacity: 0 }}
+      className="flex h-screen w-full flex-col space-y-10 bg-gradient-to-br from-turquoise-dark  to-gray-900 p-2 md:p-8">
       <header className="container mx-auto flex flex-row items-center space-x-6 divide-x divide-white px-6">
         <div className="flex flex-row items-center">
           <Link href={{ pathname: "/" }}>
@@ -68,6 +76,7 @@ export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
                   pathname: item.href,
                 }}
                 className="flex flex-row  md:flex-col"
+                onClick={toggleMenu}
               >
                 <span className="cursor-pointer text-lg font-bold capitalize text-white  md:text-4xl">
                   {item.label}
@@ -98,8 +107,8 @@ export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
                     item.label === "GitHub"
                       ? GITHUBLOGO
                       : item.label === "Twitter"
-                      ? TWITTERLOGO
-                      : LINKEDINLOGO
+                        ? TWITTERLOGO
+                        : LINKEDINLOGO
                   }
                   alt={item.label}
                   width={24}
@@ -110,6 +119,6 @@ export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
           ))}
         </ul>
       </footer>
-    </div>
+    </m.div>
   );
 };
