@@ -140,14 +140,14 @@ export const CardWithSkills = ({ items }: CardWithSkillsProps) => {
       className="flex w-full flex-col flex-wrap space-y-4 md:w-3/6"
     >
       {items.map(({ title, skills }, index) => (
-        <>
+        <div key={index} className="space-y-2">
           <h3 className="text-lg font-bold capitalize text-white">{title}</h3>
           <div className="flex flex-wrap items-center  justify-start gap-6 ">
             {skills.map((skill, index) => (
               <Badge key={index} label={skill} />
             ))}
           </div>
-        </>
+        </div>
       ))}
     </m.div>
   );
