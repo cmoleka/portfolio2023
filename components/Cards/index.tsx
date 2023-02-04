@@ -4,7 +4,9 @@ import profilePicture from "@assets/profilepicture.png";
 import Image from "next/image";
 import type { CardsProps, CardWithSkillsProps } from "@pTypes/uiTypes";
 import { motion as m } from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
 import { Badge } from "@components/Badge";
+import { forwardRef } from "react";
 
 export const CardWithTextAndTwoButtons = ({
   description,
@@ -131,24 +133,27 @@ export const CardWithTextAndOneButton = ({
   );
 };
 
-export const CardWithSkills = ({ items }: CardWithSkillsProps) => {
-  return (
-    <m.div
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="flex w-full flex-col flex-wrap space-y-4 md:w-3/6"
-    >
-      {items.map(({ title, skills }, index) => (
-        <div key={index} className="space-y-2">
-          <h3 className="text-lg font-bold capitalize text-white">{title}</h3>
-          <div className="flex flex-wrap items-center  justify-start gap-6 ">
-            {skills.map((skill, index) => (
-              <Badge key={index} label={skill} />
-            ))}
+export const CardWithSkills = forwardRef<HTMLMotionProps<"div">, CardWithSkillsProps>(
+  ({ className, items, ...props }) => {
+    return (
+      <m.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className={className}
+        {...props}
+      >
+        {items.map(({ title, skills }, index) => (
+          <div key={index} className="space-y-2">
+            <h3 className="text-lg font-bold capitalize text-white">{title}</h3>
+            <div className="flex flex-wrap items-center  justify-start gap-6 ">
+              {skills.map((skill, index) => (
+                <Badge key={index} label={skill} />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
-    </m.div>
-  );
-};
+        ))}
+      </m.div>
+    )
+  });
+CardWithSkills.displayName = 'CardWithSkills';

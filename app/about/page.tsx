@@ -1,5 +1,7 @@
-import { CardWithTextAndOneButton } from "@components/Cards";
+import { ButtonDark, ButtonWhite } from "@components/Buttons";
+import { CardWithSkills, CardWithTextAndOneButton } from "@components/Cards";
 import AboutPageContent from "@content/AboutPageContent";
+import HomePageContent from "@content/homePageContent";
 import { PAGES_CONTENT_CONST } from "@utils/constants";
 
 const AboutPage = () => {
@@ -25,9 +27,9 @@ const AboutPage = () => {
           </h1>
         </div>
         <CardWithTextAndOneButton
-          description={AboutPageContent.sectionAboutMe.description}
-          buttonLabel={AboutPageContent.sectionAboutMe.ctaLabel}
-          buttonHref={AboutPageContent.sectionAboutMe.ctaHref}
+          description={HomePageContent.cardSectionOne.description}
+          buttonLabel="explore my project"
+          buttonHref={HomePageContent.cardSectionOne.ctaHrefSecondary}
           secondary
         />
       </section>
@@ -40,14 +42,13 @@ const AboutPage = () => {
           <p className="text-base text-white">
             {AboutPageContent.sectionDetailOne.description}
           </p>
+          <ButtonWhite buttonHref={AboutPageContent.sectionAboutMe.ctaHref} label="Contact me" />
         </div>
         <div className="flex w-full flex-col space-y-6 lg:w-1/2">
           <h1 className="md:text-2xlk font-bold text-turquoise md:text-white lg:text-3xl">
             {AboutPageContent.sectionDetailTwo.title}
           </h1>
-          <p className="text-base text-white">
-            {AboutPageContent.sectionDetailTwo.description}
-          </p>
+          <CardWithSkills className="flex w-full flex-col flex-wrap space-y-4 md:w-full" items={HomePageContent.cardSectionTwo.items} />
         </div>
       </section>
     </div>
