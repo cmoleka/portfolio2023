@@ -41,7 +41,6 @@ export type HomeContent = {
 
 export type AboutContent = {
   hero: {
-    title: string;
     description: string;
   };
   sectionAboutMe: {

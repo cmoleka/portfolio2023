@@ -2,23 +2,23 @@ import type { HomeContent } from "@pTypes/apiTypes";
 
 const HomePageContent: HomeContent = {
   hero: {
-    title: "Hi, my name is Carlo Moleka. I love building things.",
+    title: "Ready to Code, Build and Innovate.",
     description:
-      "I am a software engineer based in Montreal Canada, specialized (but not limited to) in Web development.",
+      "I'm Carlo Moleka, a self-taught Full Stack Engineer with a passion for coding and a drive to make an impact through technology.",
     ctaLabel: "contact me",
     ctaHref: "/contact",
   },
   sectionAboutMe: {
     heading: "About Me",
     description:
-      "I have a strong skill set in a range of technologies, including Vue, React, NodeJS, and Flask. I am proficient in both front-end and back-end development, and am always looking for opportunities to learn and grow as a developer.",
+      "I have been a software engineer for several years now, continuously developing my skills and expanding my knowledge. My journey began 22 years ago and I've been obsessed with technology ever since.",
     ctaLabel: "Learn more",
     ctaHref: "/about",
   },
   sectionOneHeading: "Some things I've built",
   cardSectionOne: {
     description:
-      "As a software engineer, I have a wealth of projects. Some are completed, while others are still in progress, and some have been abandoned. Here is a preview of my projects.",
+      "Building projects is one of my favorite things to do, and I'm always eager to share my work with others. Here, you'll find a range of projects, from those I've finished to those that are still a work in progress.",
     ctaLabel: "contact me",
     ctaHref: "/contact",
     ctaLabelSecondary: "explore other projects",
@@ -27,11 +27,18 @@ const HomePageContent: HomeContent = {
   cardSectionTwo: {
     heading: "Technologies I'm working with",
     description:
-      "It is important to be versatile with the tools we use, while also not being limited to them. Some projects require learning and adaptation, which I am good at. This has enabled me to learn new technologies and integrate them into my workflow, giving me more choices and skills to use depending on the scope of the task.",
+      "Technology evolves quickly, and I like to make sure I'm always on top of it. Here are a few of the technologies I've been diving into lately:",
     items: [
       {
-        title: "frameworks",
-        skills: ["Vue", "React", "NextJS", "NuxtJS"],
+        title: "Libraries & frameworks",
+        skills: [
+          "Vue",
+          "React",
+          "NextJS",
+          "NuxtJS",
+          "Bootstrap",
+          "TailwindCSS",
+        ],
       },
       {
         title: "languages",
@@ -39,7 +46,7 @@ const HomePageContent: HomeContent = {
       },
       {
         title: "database",
-        skills: ["MongoDB", "PostgreSQL"],
+        skills: ["MongoDB", "PostgreSQL", "noSQL", "SQL"],
       },
     ],
     ctaLabel: "contact me",

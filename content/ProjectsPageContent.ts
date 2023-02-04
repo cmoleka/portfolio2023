@@ -3,48 +3,26 @@ import type { ProjectContent } from "@pTypes/apiTypes";
 const ProjectPageContent: ProjectContent = {
   hero: {
     description:
-      "The Open Society Foundations, founded by George Soros, are the world’s largest private funder of independent groups working for justice, democratic governance, and human rights. We provide thousands of grants every year through a network of national and regional foundations and offices, funding a vast array of projects—many of them now shaped by the challenges of the COVID-19 pandemic.",
+      "If you're interested in getting to know me better and seeing what I can do, look no further than my Projects page. Here you'll find a curated collection of my work, including both completed and ongoing projects. ",
   },
   projects: [
     {
-      title: "Project 1",
-      description:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
-      labels: ["React", "Next.js", "TypeScript"],
-      ctaHref: "https://www.google.com",
-      ctaGithub: "https://www.google.com",
-    },
-    {
-      title: "Project 2",
-      description:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
-      labels: ["React", "Next.js", "TypeScript"],
-      ctaHref: "https://www.google.com",
-      ctaGithub: "https://www.google.com",
-    },
-    {
-      title: "Project 3",
-      description:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
-      labels: ["React", "Next.js", "TypeScript"],
-    },
-    {
-      title: "Project 4",
-      description:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
-      labels: ["React", "Next.js", "TypeScript"],
-      ctaHref: "https://www.google.com",
-      ctaGithub: "https://www.google.com",
-    },
-    {
       title: "Golooka",
       description:
-        "Golooka is a platform that allows you to create and share your own virtual tours. It is a great way to show your friends and family around your home, or to share your favorite places with the world.",
-      labels: ["React", "Next.js", "TypeScript"],
+        "Golooka is a cutting-edge job platform that streamlines the job search process for both job seekers and recruiters in Congo. Utilizing modern technology, Golooka provides an index of current job openings, making it easier for job seekers to find their next career opportunity and for recruiters to find the right talent.",
+      labels: ["Next.js", "TypeScript", "TailwindCSS", "PostgreSQL", "Vercel"],
       ctaHref: "https://www.golooka.com",
       ctaGithub: "https://github.com/golooka",
       image: "/assets/projects/golooka.jpg",
       isFeatured: true,
+    },
+    {
+      title: "DA visualizer",
+      description:
+        "A small project I am working on that helps me practice and stay on top of my data structures and algorithms skills. It is a visualizer for some of the most common data structures and algorithms. For me it's all about the code under the hood, while for the viewer, I hope you find it entertaining. (Updates periodically). Probably going implement 3D models in the future.",
+      labels: ["Next.js", "TypeScript"],
+      ctaHref: "https://da-visualizer.vercel.app/",
+      ctaGithub: "https://github.com/cmoleka/da-visualizer",
     },
   ],
 };

@@ -10,10 +10,11 @@ export const ButtonWhite = ({ label, buttonHref }: ButtonProps) => {
       href={{
         pathname: buttonHref,
       }}
+      className="inline-block w-fit"
       passHref
     >
       <button className="flex h-fit w-fit items-center justify-center border-2 border-white bg-white px-8 py-3 transition delay-100 duration-300 ease-in-out hover:bg-gray-200">
-        <span className=" w-full text-sm font-semibold capitalize text-charcoal">
+        <span className=" w-full text-sm font-semibold capitalize text-slate-800">
           {label}
         </span>
       </button>
@@ -36,6 +37,7 @@ export const ButtonDark = ({ secondary, label, buttonHref }: ButtonProps) => {
       href={{
         pathname: buttonHref,
       }}
+      className="inline-block w-fit"
       scroll={false}
       passHref
     >
@@ -66,6 +68,7 @@ export const ButtonWithIcon = ({
       href={{
         pathname: buttonHref,
       }}
+      className="inline-block w-fit"
       scroll={false}
       passHref
     >

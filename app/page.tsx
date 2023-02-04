@@ -69,7 +69,7 @@ const HomePage = () => {
           buttonLabel={HomePageContent.cardSectionTwo.ctaLabel}
           buttonHref={HomePageContent.cardSectionTwo.ctaHref}
         />
-        <CardWithSkills items={HomePageContent.cardSectionTwo.items} />
+        <CardWithSkills className="flex w-full flex-col flex-wrap space-y-4 md:w-3/6" items={HomePageContent.cardSectionTwo.items} />
       </section>
     </div>
   );
