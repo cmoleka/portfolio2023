@@ -1,8 +1,6 @@
-"use client";
 import type { ButtonProps } from "@pTypes/uiTypes";
 import classNames from "classnames";
 import Link from "next/link";
-import { motion as m } from "framer-motion";
 
 export const ButtonWhite = ({ label, buttonHref }: ButtonProps) => {
   return (
@@ -60,15 +58,14 @@ export const ButtonWithIcon = ({
       scroll={false}
       passHref
     >
-      <m.span
-        whileHover={{ paddingRight: 4 }}
+      <span
         className={`w-full text-sm ${textClasses} capitalize`}
       >
         {label}
-      </m.span>
-      <m.span whileHover={{ paddingLeft: 4 }} className="">
+      </span>
+      <span className="">
         &#8594;
-      </m.span>
+      </span>
     </Link>
   );
 };
