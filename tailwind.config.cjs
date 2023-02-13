@@ -1,8 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        charcoal: {
+          DEFAULT: "#46515D",
+        },
+        turquoise: {
+          DEFAULT: "#4ECDC4",
+          md: "#146660",
+          dark: "#05332F",
+          darker: "#227973",
+        },
+        bittersweet: {
+          DEFAULT: "#FF6B6B",
+          md: "#661414",
+          dark: "#330505",
+        },
+      },
+    },
   },
   plugins: [],
 };

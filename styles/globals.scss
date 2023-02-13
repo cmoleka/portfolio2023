@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap");
+
+@layer base {
+  html {
+    @apply h-full;
+    font-family: "Bitter", serif;
+  }
+  body {
+    @apply h-full;
+  }
+  div#__next {
+    @apply h-full;
+  }
+  hr {
+    @apply opacity-10;
+  }
+}
+
+@import "./typography";
+@import "./blogpost";
