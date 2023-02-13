@@ -9,7 +9,7 @@ export const ButtonWhite = ({ label, buttonHref }: ButtonProps) => {
     <Link
       href={`${buttonHref}`}
       className="flex h-fit w-fit items-center justify-center border-2 border-white bg-white px-8 py-3 transition delay-100 duration-300 ease-in-out hover:bg-gray-200"
-      style={{ pointerEvents: "none" }} passHref
+      passHref
     >
       <span className=" w-full text-sm font-semibold capitalize text-slate-800">
         {label}
@@ -33,7 +33,7 @@ export const ButtonDark = ({ secondary, label, buttonHref }: ButtonProps) => {
       href={`${buttonHref}`}
       className={` ${buttonClasses} flex h-fit w-fit items-center justify-center border-2 border-turquoise  px-8 py-3 transition delay-100 duration-300 ease-in-out`}
       scroll={false}
-      style={{ pointerEvents: "none" }} passHref
+      passHref
     >
       <span
         className={`${textClasses} inline-block w-full text-sm font-semibold capitalize `}
@@ -58,9 +58,7 @@ export const ButtonWithIcon = ({
       href={`${buttonHref}`}
       className="flex h-fit w-fit items-center justify-start space-x-4  py-3  text-white hover:text-gray-300"
       scroll={false}
-      style={{ pointerEvents: "none" }} passHref
-
-
+      passHref
     >
       <m.span
         whileHover={{ paddingRight: 4 }}

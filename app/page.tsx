@@ -1,3 +1,4 @@
+'use client'
 import HeroComponent from "@components/Hero";
 import {
   CardWithHeadingTextOneButton,
