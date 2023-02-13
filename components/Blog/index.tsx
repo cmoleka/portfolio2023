@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { PAGES_CONTENT_CONST } from "@utils/constants";
@@ -17,34 +16,35 @@ export const FeatureBlogPost = ({
   feature_image,
 }: BlogPostProps) => {
   return (
-    <section className="flex w-full flex-col justify-between overflow-hidden rounded-md">
-      <Link
-        href={`/blog/${slug}`}
-        scroll={false}
-      >
-        <div className="flex w-full justify-center">
-          <div className="relative flex h-fit w-full flex-col p-4">
-            <div className="z-20 w-full space-y-2  p-4  md:w-3/4 lg:w-1/2">
-              <span className="text-xs capitalize text-white">
-                <b>{PAGES_CONTENT_CONST.blogFeaturedLabel}</b> -{" "}
-                {`${DateFormat(published_at)}`}
-              </span>
+    <div className="flex w-full flex-col justify-between overflow-hidden rounded-md">
+      <div className="flex w-full justify-center">
+        <div className="relative flex h-fit w-full flex-col p-4">
+          <div className="z-20 w-full space-y-2  p-4  md:w-3/4 lg:w-1/2">
+            <span className="text-xs capitalize text-white">
+              <b>{PAGES_CONTENT_CONST.blogFeaturedLabel}</b> -{" "}
+              {`${DateFormat(published_at)}`}
+            </span>
+            <Link
+              href={`/blog/${slug}`}
+              scroll={false}
+            >
               <h1 className="text-4xl font-bold capitalize text-turquoise">
                 {title}
               </h1>
-              <p className="text-sm text-white/75 lg:text-base">{excerpt}</p>
-            </div>
-            <div className="absolute top-0 left-0 z-10 h-full w-full bg-turquoise-dark/90 mix-blend-multiply hover:bg-turquoise-dark/75"></div>
-            <Image
-              src={feature_image as string}
-              alt={title}
-              className="overla rounded-md object-cover"
-              fill
-            />
+            </Link>
+            <p className="text-sm text-white/75 lg:text-base">{excerpt}</p>
           </div>
+          <div className="absolute top-0 left-0 z-10 h-full w-full bg-turquoise-dark/90 mix-blend-multiply"></div>
+          <Image
+            src={feature_image as string}
+            alt={title}
+            className="overla rounded-md object-cover"
+            sizes="1024"
+            fill
+          />
         </div>
-      </Link>
-    </section>
+      </div>
+    </div>
   );
 };
 
@@ -58,6 +58,7 @@ export const BlogPost = ({
     <Link
       href={`/blog/${slug}`}
       scroll={false}
+      passHref
     >
       <div className="h-fit w-full space-y-4 rounded-md hover:bg-gray-600 p-4 shadow-md bg-gray-800 ">
         <h2 className="text-lg font-bold capitalize text-turquoise">{title}</h2>
