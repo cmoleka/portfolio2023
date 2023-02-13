@@ -19,9 +19,7 @@ export const FeatureBlogPost = ({
   return (
     <section className="flex w-full flex-col justify-between overflow-hidden rounded-md">
       <Link
-        href={{
-          pathname: `/blog/${slug}`,
-        }}
+        href={`/blog/${slug}`}
         scroll={false}
       >
         <div className="flex w-full justify-center">
@@ -58,9 +56,7 @@ export const BlogPost = ({
 }: BlogPostProps) => {
   return (
     <Link
-      href={{
-        pathname: `/blog/${slug}`,
-      }}
+      href={`/blog/${slug}`}
       scroll={false}
     >
       <div className="h-fit w-full space-y-4 rounded-md hover:bg-gray-600 p-4 shadow-md bg-gray-800 ">
@@ -95,9 +91,7 @@ export const BlogSideBar = ({ labels }: BlogPostSideBarProps) => {
       {labels.map((topic) => (
         <li key={topic.slug} className="flex flex-row items-center">
           <Link
-            href={{
-              pathname: `/blog/tags/${topic.slug}`,
-            }}
+            href={`/blog/tags/${topic.slug}`}
             scroll={false}
           >
             <span className="text-sm capitalize text-white/75">

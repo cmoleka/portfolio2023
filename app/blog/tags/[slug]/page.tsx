@@ -1,11 +1,7 @@
-import type {
-  BlogPostProps,
-  BlogPostSideBarProps
-} from "@pTypes/uiTypes";
 import { BlogPostsTimeLine, BlogSideBar } from "@components/Blog";
 import { PAGES_CONTENT_CONST } from "@utils/constants";
 
-import { getPosts, getAllTags, getPostsByTag, getSingleTag } from "@utils/GhostApi";
+import { getAllTags, getPostsByTag, getSingleTag } from "@utils/GhostApi";
 import Link from "next/link";
 
 interface BlogTag {
@@ -56,9 +52,7 @@ const BlogSlugPage = async ({ params }: SinglePageBlogPostProps) => {
       <section className="flex w-full flex-col justify-between space-y-4 lg:flex-row lg:space-y-0 lg:space-x-6">
         <div className="flex w-full flex-col space-y-4  lg:w-1/5">
           <Link
-            href={{
-              pathname: "/blog",
-            }}
+            href="/blog"
             scroll={false}
           >
             <h3 className="text-xl font-bold text-white before:text-turquoise before:content-['<-']">

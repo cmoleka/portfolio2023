@@ -29,11 +29,7 @@ const BlogSinglePostPage = async ({ params }: SinglePageBlogPostProps) => {
     <div className="container mx-auto w-full space-y-20 py-6 px-6">
       <section className="flex w-full flex-col justify-between space-y-4 lg:flex-row lg:space-y-0 lg:space-x-6">
         <div className="flex w-full flex-col space-y-4  lg:w-1/5">
-          <Link
-            href={{
-              pathname: "/blog",
-            }}
-            scroll={false}
+          <Link href="/blog" scroll={false}
           >
             <h3 className="text-xl font-bold text-white before:text-turquoise before:content-['<-']">
               {PAGES_CONTENT_CONST.blogGoBackLabel}

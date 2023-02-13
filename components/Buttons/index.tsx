@@ -7,9 +7,7 @@ import { motion as m } from "framer-motion";
 export const ButtonWhite = ({ label, buttonHref }: ButtonProps) => {
   return (
     <Link
-      href={{
-        pathname: buttonHref,
-      }}
+      href={`${buttonHref}`}
       className="inline-block w-fit"
       passHref
     >
@@ -34,9 +32,7 @@ export const ButtonDark = ({ secondary, label, buttonHref }: ButtonProps) => {
 
   return (
     <Link
-      href={{
-        pathname: buttonHref,
-      }}
+      href={`${buttonHref}`}
       className="inline-block w-fit"
       scroll={false}
       passHref
@@ -65,9 +61,7 @@ export const ButtonWithIcon = ({
   });
   return (
     <Link
-      href={{
-        pathname: buttonHref,
-      }}
+      href={`${buttonHref}`}
       className="inline-block w-fit"
       scroll={false}
       passHref

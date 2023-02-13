@@ -1,4 +1,4 @@
-import { ButtonDark, ButtonWhite } from "@components/Buttons";
+import { ButtonWhite } from "@components/Buttons";
 import { CardWithSkills, CardWithTextAndOneButton } from "@components/Cards";
 import AboutPageContent from "@content/AboutPageContent";
 import HomePageContent from "@content/homePageContent";

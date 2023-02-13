@@ -13,7 +13,7 @@ export const HeaderComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
     <>
       <header className="container sticky top-0 z-[9999] mx-auto flex flex-row items-center space-x-6 divide-x divide-white p-2 px-6 backdrop-blur-md md:p-8">
         <div className="flex flex-row items-center">
-          <Link href={{ pathname: "/" }} scroll={false}>
+          <Link href="/" scroll={false}>
             <Image
               src={Logo}
               alt="logo"
@@ -47,7 +47,7 @@ export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
     >
       <header className="container mx-auto flex flex-row items-center space-x-6 divide-x divide-white px-6">
         <div className="flex flex-row items-center">
-          <Link href={{ pathname: "/" }} scroll={false}>
+          <Link href="/" scroll={false}>
             <Image
               src={Logo}
               alt="logo"
@@ -73,10 +73,7 @@ export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
               className="flex flex-col md:flex-row  md:items-center md:justify-between md:space-x-20"
             >
               <Link
-                href={{
-                  pathname: item.href,
-                }}
-                scroll={false}
+                href={`${item.href}`} scroll={false}
                 className="flex flex-row  md:flex-col"
                 onClick={toggleMenu}
               >
@@ -110,8 +107,8 @@ export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
                     item.label === "GitHub"
                       ? GITHUBLOGO
                       : item.label === "Twitter"
-                      ? TWITTERLOGO
-                      : LINKEDINLOGO
+                        ? TWITTERLOGO
+                        : LINKEDINLOGO
                   }
                   alt={item.label}
                   width={24}
