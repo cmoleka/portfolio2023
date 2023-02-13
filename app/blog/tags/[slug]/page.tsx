@@ -18,14 +18,14 @@ export type BlogTagsProps = {
 interface SinglePageBlogPostProps {
   params: {
     slug: string[];
-    tag: BlogTagsProps[];
+    tag: string[];
   }
 }
 export async function generateStaticParams(): Promise<SinglePageBlogPostProps["params"][]> {
   const BlogTags = await getAllTags();
   const BlogPosts = await getPosts();
   const postSlugs = BlogPosts.map((post: BlogPostProps) => post.slug)
-  const tagSlugs = BlogTags.map((tag: BlogTagsProps) => tag)
+  const tagSlugs = BlogTags.map((tag: BlogTagsProps) => tag.slug)
 
   return [{
     slug: postSlugs,
