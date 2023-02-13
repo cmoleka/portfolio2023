@@ -1,3 +1,4 @@
+'use client'
 import type { ButtonProps } from "@pTypes/uiTypes";
 import classNames from "classnames";
 import Link from "next/link";
