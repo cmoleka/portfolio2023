@@ -1,8 +1,11 @@
+'use client'
 import { ButtonDark } from "@components/Buttons";
 import { PAGES_CONTENT_CONST } from "@utils/constants";
 import type { FC } from "react";
+import { usePathname } from "next/navigation";
 
 const FooterComponent: FC = () => {
+  const path = usePathname();
   return (
     <>
       <hr />
@@ -11,10 +14,14 @@ const FooterComponent: FC = () => {
           <h1 className="text-2xl font-bold text-white  md:text-4xl lg:text-4xl xl:text-6xl">
             {PAGES_CONTENT_CONST.footerHeading}
           </h1>
-          <ButtonDark
-            buttonHref={PAGES_CONTENT_CONST.footerCtaHref}
-            label={PAGES_CONTENT_CONST.footerCtaLabel}
-          />
+          {
+            path !== "/contact" &&
+
+            <ButtonDark
+              buttonHref={PAGES_CONTENT_CONST.footerCtaHref}
+              label={PAGES_CONTENT_CONST.footerCtaLabel}
+            />
+          }
         </div>
       </section>
       <footer className="container mx-auto flex w-full flex-row items-center">
