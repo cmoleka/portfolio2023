@@ -1,5 +1,6 @@
 import type {
   BlogPostProps,
+  BlogPostSideBarProps
 } from "@pTypes/uiTypes";
 import { BlogPostsTimeLine, BlogSideBar } from "@components/Blog";
 import { PAGES_CONTENT_CONST } from "@utils/constants";
@@ -8,26 +9,38 @@ import { getPosts, getAllTags, getPostsByTag, getSingleTag } from "@utils/GhostA
 import Link from "next/link";
 
 
+export type BlogTagsProps = {
+  name: string;
+  slug: string;
+  description: string;
+};
+
 interface SinglePageBlogPostProps {
   params: {
-    slug: string;
+    slug: string[];
+    tag: BlogTagsProps[];
   }
 }
 export async function generateStaticParams(): Promise<SinglePageBlogPostProps["params"][]> {
+  const BlogTags = await getAllTags();
   const BlogPosts = await getPosts();
-  return BlogPosts.map((post: BlogPostProps) => ({
-    slug: post.slug
-  }))
+  const postSlugs = BlogPosts.map((post: BlogPostProps) => post.slug)
+  const tagSlugs = BlogTags.map((tag: BlogTagsProps) => tag)
+
+  return [{
+    slug: postSlugs,
+    tag: tagSlugs
+  }
+  ]
 }
 
 const BlogSlugPage = async ({ params }: SinglePageBlogPostProps) => {
-  const slug = params.slug || "";
+  const slug = params.slug.join(',') || "";
+  const tags = params.tag
   const BlogPosts = getPostsByTag(slug);
-  const BlogTags = getAllTags();
   const BlogSingleTag = getSingleTag(slug);
-  const [posts, tags, tag] = await Promise.all([
+  const [posts, tag] = await Promise.all([
     BlogPosts,
-    BlogTags,
     BlogSingleTag,
   ]);
 
