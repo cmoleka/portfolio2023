@@ -1,3 +1,4 @@
+import 'server-only'
 import type {
   BlogPostProps,
   BlogPostSideBarProps,
@@ -44,7 +45,7 @@ export const getSinglePost = async (postSlug: string) => {
   const post = await api.posts.read({
     slug: postSlug,
   });
-  return post;
+  return post as BlogPostProps;
 };
 
 export const getAllTags = async () => {
