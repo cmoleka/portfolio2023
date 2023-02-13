@@ -1,17 +1,30 @@
-'use client'
+import type {
+  BlogPostProps,
+} from "@pTypes/uiTypes";
 import { BlogPostsTimeLine, BlogSideBar } from "@components/Blog";
 import { PAGES_CONTENT_CONST } from "@utils/constants";
 
-import { getAllTags, getPostsByTag, getSingleTag } from "@utils/GhostApi";
+import { getPosts, getAllTags, getPostsByTag, getSingleTag } from "@utils/GhostApi";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 
-const BlogSlugPage = async () => {
-  const { query } = useRouter();
-  const BlogPosts = getPostsByTag(query.slug as string);
+interface SinglePageBlogPostProps {
+  params: {
+    slug: string;
+  }
+}
+export async function generateStaticParams(): Promise<SinglePageBlogPostProps["params"][]> {
+  const BlogPosts = await getPosts();
+  return BlogPosts.map((post: BlogPostProps) => ({
+    slug: post.slug
+  }))
+}
+
+const BlogSlugPage = async ({ params }: SinglePageBlogPostProps) => {
+  const slug = params.slug || "";
+  const BlogPosts = getPostsByTag(slug);
   const BlogTags = getAllTags();
-  const BlogSingleTag = getSingleTag(query.slug as string);
+  const BlogSingleTag = getSingleTag(slug);
   const [posts, tags, tag] = await Promise.all([
     BlogPosts,
     BlogTags,

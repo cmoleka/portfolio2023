@@ -59,8 +59,7 @@ export const BlogPost = ({
   return (
     <Link
       href={{
-        pathname: `/blog/[slug]`,
-        query: slug,
+        pathname: `/blog/${slug}`,
       }}
       scroll={false}
     >
