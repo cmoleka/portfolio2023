@@ -12,7 +12,7 @@ const GetAllTags = async () => {
   return await getAllTags();
 }
 
-const BlogSinglePostPagle = async ({
+const BlogSinglePostPage = async ({
   params: { slug },
 }: {
   params: { slug: string };
@@ -63,4 +63,4 @@ const BlogSinglePostPagle = async ({
   );
 };
 
-export default BlogSinglePostPagle;
+export default BlogSinglePostPage;
