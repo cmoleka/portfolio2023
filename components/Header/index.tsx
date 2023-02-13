@@ -6,34 +6,57 @@ import { SITE_NAVIGATION, SOCIAL_LINKS } from "@utils/constants";
 import GITHUBLOGO from "@assets/icons/github-logo.png";
 import LINKEDINLOGO from "@assets/icons/linkedin-logo.png";
 import TWITTERLOGO from "@assets/icons/twitter-logo.png";
-import { motion as m } from "framer-motion";
+import { useState } from "react";
+import { motion as m, AnimatePresence } from "framer-motion";
 
-export const HeaderComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
+export const HeaderComponent = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <>
-      <header className="container sticky top-0 z-[9999] mx-auto flex flex-row items-center space-x-6 divide-x divide-white p-2 px-6 backdrop-blur-md md:p-8">
-        <div className="flex flex-row items-center">
-          <Link href="/" scroll={false}>
-            <Image
-              src={Logo}
-              alt="logo"
-              className="h-16 w-16 md:h-auto md:w-auto"
-              sizes="(max-width: 768px) 20vw, (min-width: 1024) 100%"
-            />
-          </Link>
-        </div>
-        <nav className="flex flex-row space-x-4 pl-6">
-          <span
-            onClick={toggleMenu}
-            className="cursor-pointer text-lg font-bold capitalize text-white"
-          >
-            menu
-          </span>
-        </nav>
-      </header>
+      <AnimatePresence mode="wait">
+        {!menuOpen && <MenuClosedComponent toggleMenu={toggleMenu} />
+        }
+        {menuOpen && <MenuComponent toggleMenu={toggleMenu} />}
+      </AnimatePresence>
     </>
   );
 };
+
+export const MenuClosedComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
+  return (
+    <m.header
+      key="menuClosed"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      exit={{ opacity: 0 }}
+      className="container sticky top-0 z-[9999] mx-auto flex flex-row items-center space-x-6 divide-x divide-white p-2 px-6 backdrop-blur-md md:p-8">
+      <div className="flex flex-row items-center">
+        <Link href="/" scroll={false}>
+          <Image
+            src={Logo}
+            alt="logo"
+            className="h-16 w-16 md:h-auto md:w-auto"
+            sizes="(max-width: 768px) 20vw, (min-width: 1024) 100%"
+          />
+        </Link>
+      </div>
+      <nav className="flex flex-row space-x-4 pl-6">
+        <span
+          onClick={toggleMenu}
+          className="cursor-pointer text-lg font-bold capitalize text-white"
+        >
+          menu
+        </span>
+      </nav>
+    </m.header>
+
+  )
+}
 
 export const MenuComponent = ({ toggleMenu }: { toggleMenu: () => void }) => {
   return (

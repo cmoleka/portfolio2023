@@ -40,9 +40,9 @@ const HeroComponent = ({
       </m.div>
       <div className="hidden flex-col space-y-4 md:w-3/6 lg:flex">
         <m.svg width="366" initial="hidden" animate="visible" height="344" viewBox="0 0 366 344" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <m.circle cx="150.5" cy="150.5" r="149.5" stroke="#4ECDC4" stroke-width="2" variants={draw} custom={1} />
-          <m.circle cx="186.5" cy="193.5" r="149.5" stroke="#4ECDC4" stroke-width="2" variants={draw} custom={2} />
-          <m.circle cx="215.5" cy="150.5" r="149.5" stroke="#4ECDC4" stroke-width="2" variants={draw} custom={3} />
+          <m.circle cx="150.5" cy="150.5" r="149.5" stroke="#4ECDC4" strokeWidth="2" variants={draw} custom={1} />
+          <m.circle cx="186.5" cy="193.5" r="149.5" stroke="#4ECDC4" strokeWidth="2" variants={draw} custom={2} />
+          <m.circle cx="215.5" cy="150.5" r="149.5" stroke="#4ECDC4" strokeWidth="2" variants={draw} custom={3} />
         </m.svg>
       </div>
     </div>

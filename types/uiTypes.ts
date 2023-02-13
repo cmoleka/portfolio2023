@@ -1,5 +1,5 @@
 import type { HTMLMotionProps } from "framer-motion";
-import type { ChangeEvent, ReactNode } from "react";
+import type { ChangeEvent, HTMLAttributes, ReactNode } from "react";
 import type React from "react";
 
 export type LayoutProps = {
@@ -111,7 +111,7 @@ export type BlogPostTagsProps = {
   description: string;
 };
 
-export interface CardWithSkillsProps extends HTMLMotionProps<"div"> {
+export interface CardWithSkillsProps extends HTMLAttributes<HTMLDivElement> {
   items: {
     title: string;
     skills: string[];
