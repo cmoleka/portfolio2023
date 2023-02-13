@@ -1,18 +1,17 @@
+'use client'
 import { BlogPostsTimeLine, BlogSideBar } from "@components/Blog";
 import { PAGES_CONTENT_CONST } from "@utils/constants";
 
 import { getAllTags, getPostsByTag, getSingleTag } from "@utils/GhostApi";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 
-const BlogSlugPage = async ({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) => {
-  const BlogPosts = getPostsByTag(slug);
+const BlogSlugPage = async () => {
+  const { query } = useRouter();
+  const BlogPosts = getPostsByTag(query.slug as string);
   const BlogTags = getAllTags();
-  const BlogSingleTag = getSingleTag(slug);
+  const BlogSingleTag = getSingleTag(query.slug as string);
   const [posts, tags, tag] = await Promise.all([
     BlogPosts,
     BlogTags,

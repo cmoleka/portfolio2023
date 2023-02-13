@@ -1,16 +1,15 @@
+'use client'
 import { BlogSideBar } from "@components/Blog";
 import { PAGES_CONTENT_CONST } from "@utils/constants";
 import { DateFormat } from "@utils/DateFormat";
 import { getSinglePost, getAllTags } from "@utils/GhostApi";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 
-const BlogSinglePostPage = async ({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) => {
-  const BlogPost = getSinglePost(slug);
+const BlogSinglePostPage = async () => {
+  const { query } = useRouter();
+  const BlogPost = getSinglePost(query.slug as string);
   const BlogTags = getAllTags();
   const [post, tags] = await Promise.all([BlogPost, BlogTags]);
 
@@ -55,5 +54,7 @@ const BlogSinglePostPage = async ({
     </div>
   );
 };
+
+
 
 export default BlogSinglePostPage;
