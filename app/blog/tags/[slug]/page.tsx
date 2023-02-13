@@ -36,11 +36,13 @@ export async function generateStaticParams(): Promise<SinglePageBlogPostProps["p
 
 const BlogSlugPage = async ({ params }: SinglePageBlogPostProps) => {
   const slug = params.slug.join(',') || "";
-  const tags = params.tag
-  const BlogPosts = getPostsByTag(slug);
+  const tagsarg = params.tag.join(",")
+  const BlogPosts = getPostsByTag(tagsarg);
+  const BlogTags = getAllTags();
   const BlogSingleTag = getSingleTag(slug);
-  const [posts, tag] = await Promise.all([
+  const [posts, tags, tag] = await Promise.all([
     BlogPosts,
+    BlogTags,
     BlogSingleTag,
   ]);
 
