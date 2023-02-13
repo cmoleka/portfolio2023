@@ -63,7 +63,7 @@ export const BlogPost = ({
       }}
       scroll={false}
     >
-      <div className="h-fit w-full space-y-4 rounded-md bg-gray-800 p-4 shadow-md hover:bg-gray-800 md:bg-gray-900">
+      <div className="h-fit w-full space-y-4 rounded-md hover:bg-gray-600 p-4 shadow-md bg-gray-800 ">
         <h2 className="text-lg font-bold capitalize text-turquoise">{title}</h2>
         <p className="h-full text-white/75 md:text-xs lg:text-sm">{excerpt}</p>
         <div className="flex flex-row flex-wrap gap-2">

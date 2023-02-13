@@ -4,13 +4,21 @@ import { DateFormat } from "@utils/DateFormat";
 import { getSinglePost, getAllTags } from "@utils/GhostApi";
 import Link from "next/link";
 
+const GetSinglePost = async (slug: string) => {
+  return await getSinglePost(slug);
+}
+
+const GetAllTags = async () => {
+  return await getAllTags();
+}
+
 const BlogSinglePostPagle = async ({
   params: { slug },
 }: {
   params: { slug: string };
 }) => {
-  const BlogPost = await getSinglePost(slug);
-  const BlogTags = await getAllTags();
+  const BlogPost = await GetSinglePost(slug);
+  const BlogTags = await GetAllTags();
   const [post, tags] = await Promise.all([BlogPost, BlogTags]);
 
   return (
