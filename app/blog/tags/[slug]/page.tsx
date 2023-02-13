@@ -8,7 +8,11 @@ import { PAGES_CONTENT_CONST } from "@utils/constants";
 import { getPosts, getAllTags, getPostsByTag, getSingleTag } from "@utils/GhostApi";
 import Link from "next/link";
 
-
+interface BlogTag {
+  name: string;
+  slug: string;
+  description: string;
+}
 
 interface SinglePageBlogPostProps {
   params: {
@@ -16,9 +20,9 @@ interface SinglePageBlogPostProps {
   }
 }
 export async function generateStaticParams(): Promise<SinglePageBlogPostProps["params"][]> {
-  const BlogPosts = await getPosts();
-  return BlogPosts.map((post: BlogPostProps) => ({
-    slug: post.slug
+  const BlogTags = await getAllTags();
+  return BlogTags.map((tag: BlogTag) => ({
+    slug: tag.slug
   }))
 }
 
