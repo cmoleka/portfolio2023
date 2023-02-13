@@ -4,26 +4,15 @@ import { PAGES_CONTENT_CONST } from "@utils/constants";
 import { getAllTags, getPostsByTag, getSingleTag } from "@utils/GhostApi";
 import Link from "next/link";
 
-const GetPostsByTag = async (slug: string) => {
-  return await getPostsByTag(slug)
-}
-
-const GetAllTags = async () => {
-  return await getAllTags();
-}
-
-const GetSingleTag = async (slug: string) => {
-  return await getSingleTag(slug);
-}
 
 const BlogSlugPage = async ({
   params: { slug },
 }: {
   params: { slug: string };
 }) => {
-  const BlogPosts = await GetPostsByTag(slug);
-  const BlogTags = await GetAllTags();
-  const BlogSingleTag = await GetSingleTag(slug);
+  const BlogPosts = getPostsByTag(slug);
+  const BlogTags = getAllTags();
+  const BlogSingleTag = getSingleTag(slug);
   const [posts, tags, tag] = await Promise.all([
     BlogPosts,
     BlogTags,

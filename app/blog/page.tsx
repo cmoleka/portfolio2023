@@ -7,22 +7,11 @@ import { BlogPageContent } from "@content/BlogPageContent";
 import { PAGES_CONTENT_CONST } from "@utils/constants";
 import { getPosts, getFeaturedPost, getAllTags } from "@utils/GhostApi";
 
-const GetPosts = async () => {
-  return await getPosts()
-}
-
-const GetFeaturedPost = async () => {
-  return await getFeaturedPost()
-}
-
-const GetAllTags = async () => {
-  return await getAllTags();
-}
 
 const BlogPage = async () => {
-  const BlogPosts = await GetPosts();
-  const BlogFeaturedPost = await GetFeaturedPost();
-  const BlogTags = await GetAllTags();
+  const BlogPosts = getPosts();
+  const BlogFeaturedPost = getFeaturedPost();
+  const BlogTags = getAllTags();
   const [posts, featurePost, tags] = await Promise.all([
     BlogPosts,
     BlogFeaturedPost,
