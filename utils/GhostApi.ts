@@ -44,7 +44,7 @@ export const getSinglePost = async (postSlug: string) => {
   const post = await api.posts.read({
     slug: postSlug,
   });
-  return post as BlogPostProps;
+  return post;
 };
 
 export const getAllTags = async () => {

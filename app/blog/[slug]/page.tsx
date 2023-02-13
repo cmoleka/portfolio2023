@@ -38,7 +38,7 @@ const BlogSinglePostPage = async ({
         <div className="flex w-full flex-col space-y-4">
           <span className="text-xs capitalize text-white">
             <b>{PAGES_CONTENT_CONST.blogPostedOnLabel}</b> -{" "}
-            {`${DateFormat(post.published_at)}`}
+            {`${DateFormat(post.published_at as string)}`}
           </span>
           <h1 className="text-4xl font-bold capitalize text-turquoise">
             {post.title}
