@@ -7,9 +7,6 @@
 
 /** @type {import("next").NextConfig} */
 const config = {
- experimental: {
-    appDir: true,
- },
   swcMinify: true,
   reactStrictMode: true,
   images: {

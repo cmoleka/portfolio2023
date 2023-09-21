@@ -26,10 +26,11 @@ export type HeroProps = {
 export type CardsProps = {
   title?: string;
   description?: string;
-  buttonHref: string;
-  buttonLabel: string;
+  buttonHref?: string;
+  buttonLabel?: string;
   buttonLabelSecondary?: string;
   buttonHrefSecondary?: string;
+  secondary?: boolean;
 };
 
 export type ProjectPreviewProps = {

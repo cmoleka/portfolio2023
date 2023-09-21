@@ -1,3 +1,6 @@
+// ! Deprecated file
+
+
 import type {
   BlogPostProps,
   BlogPostSideBarProps,

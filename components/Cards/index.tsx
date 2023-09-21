@@ -14,6 +14,7 @@ export const CardWithTextAndTwoButtons = ({
   buttonLabel,
   buttonHrefSecondary,
   buttonLabelSecondary,
+  secondary
 }: CardsProps) => {
   return (
     <m.div
@@ -24,12 +25,18 @@ export const CardWithTextAndTwoButtons = ({
     >
       <p className="text-base text-white">{description}</p>
       <div className="mt-4 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-        <ButtonWhite label={buttonLabel} buttonHref={buttonHref} />
-        <ButtonWithIcon
-          label={buttonLabelSecondary as string}
-          buttonHref={buttonHrefSecondary as string}
-        />
+        {
+          !secondary && (
+            <ButtonWhite label={buttonLabel || ""} buttonHref={buttonHref || ""} />
+          )
+        }
+        { !secondary && ( <ButtonWithIcon
+     label={buttonLabelSecondary || ""}
+     buttonHref={buttonHrefSecondary || ""}
+   />)
+        }
       </div>
+
     </m.div>
   );
 };
@@ -39,6 +46,7 @@ export const CardWithHeadingAndTwoButtons = ({
   buttonLabel,
   buttonHrefSecondary,
   buttonLabelSecondary,
+  secondary
 }: CardsProps) => {
   return (
     <div className="flex w-full flex-col space-y-8 md:w-3/4 lg:w-3/5">
@@ -46,11 +54,16 @@ export const CardWithHeadingAndTwoButtons = ({
         {title}
       </h2>
       <div className="mt-4 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-        <ButtonWhite label={buttonLabel} buttonHref={buttonHref} />
-        <ButtonWithIcon
-          label={buttonLabelSecondary as string}
-          buttonHref={buttonHrefSecondary as string}
-        />
+        {
+          !secondary && (
+            <ButtonWhite label={buttonLabel || ""} buttonHref={buttonHref || ""} />
+          )
+        }
+        { !secondary && ( <ButtonWithIcon
+     label={buttonLabelSecondary || ""}
+     buttonHref={buttonHrefSecondary || ""}
+   />)
+        }
       </div>
     </div>
   );
@@ -60,6 +73,7 @@ export const CardWithHeadingTextOneButton = ({
   description,
   buttonHref,
   buttonLabel,
+  secondary
 }: CardsProps) => {
   return (
     <m.div
@@ -73,7 +87,10 @@ export const CardWithHeadingTextOneButton = ({
       </h1>
       <p className="text-base text-white opacity-75">{description}</p>
       <div className="mt-4 flex flex-row space-x-4">
-        <ButtonDark label={buttonLabel} buttonHref={buttonHref} />
+          { !secondary && (
+            <ButtonDark label={buttonLabel || ""} buttonHref={buttonHref || ""} />
+          )
+        }
       </div>
     </m.div>
   );
@@ -83,6 +100,7 @@ export const CardWhoAmI = ({
   description,
   buttonHref,
   buttonLabel,
+  secondary
 }: CardsProps) => {
   /* There is an issue, because Next image component has changed
     Lets figure it out another time */
@@ -93,7 +111,10 @@ export const CardWhoAmI = ({
           <h1 className="text-4xl font-bold text-gray-900">{title}</h1>
           <p className="text-base text-charcoal opacity-75">{description}</p>
           <div className="mt-4 flex flex-row space-x-4">
-            <ButtonDark label={buttonLabel} buttonHref={buttonHref} secondary />
+          { !secondary && (
+            <ButtonDark label={buttonLabel || ""} buttonHref={buttonHref || ""} />
+          )
+        }
           </div>
         </div>
         <div className="relative w-full">
@@ -113,7 +134,7 @@ export const CardWithTextAndOneButton = ({
   buttonHref,
   buttonLabel,
   secondary,
-}: { secondary?: boolean } & CardsProps) => {
+}: CardsProps) => {
   return (
     <m.div
       initial={{ opacity: 0, y: 100 }}
@@ -123,11 +144,15 @@ export const CardWithTextAndOneButton = ({
     >
       <p className="text-base font-semibold text-white">{description}</p>
       <div className="mt-4 flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-        <ButtonWithIcon
-          label={buttonLabel}
-          buttonHref={buttonHref}
-          secondary={secondary}
-        />
+        {
+          !secondary && (
+            <ButtonWithIcon
+              label={buttonLabel || ""}
+              buttonHref={buttonHref || ""}
+              secondary={secondary}
+            />
+          )
+        }
       </div>
     </m.div>
   );
