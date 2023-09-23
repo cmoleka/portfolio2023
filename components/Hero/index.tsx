@@ -1,10 +1,10 @@
 'use client'
 import { ButtonDark } from "@components/Buttons";
 import type { HeroProps } from "@pTypes/uiTypes";
-import { PAGES_CONTENT_CONST } from "@utils/constants";
 import { motion as m } from 'framer-motion'
 
 const HeroComponent = ({
+  label,
   title,
   description,
   ctaLabel,
@@ -32,7 +32,7 @@ const HeroComponent = ({
         transition={{ delay: 0.7, duration: 0.5 }}
         className="flex w-full flex-col space-y-6 md:w-5/6">
         <label className="text-sm uppercase text-turquoise">
-          {PAGES_CONTENT_CONST.heroLabel}
+          {label}
         </label>
         <h1 className="text-4xl font-bold text-white   md:text-6xl">{title}</h1>
         <p className="text-base text-white/75">{description}</p>

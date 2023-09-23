@@ -17,6 +17,7 @@ export type ButtonProps = {
 };
 
 export type HeroProps = {
+  label: string
   title: string;
   description: string;
   ctaLabel: string;
