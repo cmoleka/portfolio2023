@@ -4,7 +4,6 @@ import profilePicture from "@assets/profilepicture.png";
 import Image from "next/image";
 import type { CardsProps, CardWithSkillsProps } from "@pTypes/uiTypes";
 import { motion as m } from "framer-motion";
-import type { HTMLMotionProps } from "framer-motion";
 import { Badge } from "@components/Badge";
 import { forwardRef } from "react";
 
