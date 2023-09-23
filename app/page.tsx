@@ -20,7 +20,7 @@ const HomePage = async () => {
           title={HomePageData.get("hero_heading") as string}
           description={HomePageData.get("hero_paragraph") as string}
           ctaLabel={HomePageData.get("hero_cta_label") as string}
-          ctaHref={HomePageData.get("hero_cta_href") as string}
+          ctaHref={`mailto:${HomePageData.get("hero_cta_href")}`}
         />
         <section id="#aboutme" className="flex w-full flex-col justify-between md:flex-row md:space-x-6">
           <div className="flex w-full flex-col md:w-3/6">
@@ -44,6 +44,7 @@ const HomePage = async () => {
           .map((project, index) => (
             <FeaturedProjectCard
               key={index}
+              tag={project.tag || ""}
               title={project.name || ""}
               description={project.summary || ""}
               labels={project.stack || []}
@@ -59,6 +60,7 @@ const HomePage = async () => {
               .map((project, index) => (
                 <ProjectCard
                   key={index}
+                  tag={project.tag || ""}
                   title={project.name || ""}
                   description={project.summary || ""}
                   labels={project.stack || []}

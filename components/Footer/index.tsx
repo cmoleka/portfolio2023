@@ -14,7 +14,7 @@ const FooterComponent = async () => {
           </h1>
 
             <ButtonDark
-              buttonHref={FooterData.get("contact_cta_href") as string}
+          buttonHref={`mailto:${FooterData.get("contact_cta_href")}`}
               label={FooterData.get("contact_cta_label") as string}
             />
         </div>

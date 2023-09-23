@@ -46,6 +46,7 @@ export type ProjectCardProps = {
   title: string;
   description: string;
   labels: string[];
+  tag: string;
   ctaHref: string;
   ctaGithub: string;
   image?: string;
