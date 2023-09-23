@@ -5,11 +5,12 @@ import {
 import ProjectContent from "@content/ProjectsPageContent";
 import { FeaturedProjectCard, ProjectCard } from "@components/Projects";
 import { PageWrapper } from "@components/PageWrapper";
-import { getPageContent } from "@utils/notion";
+import { getPageContent, getProjects } from "@utils/notion";
 
 
 const HomePage = async () => {
   const HomePageData = await getPageContent()
+  const ProjectsData = await getProjects()
 
   return (
     <PageWrapper>
@@ -38,32 +39,31 @@ const HomePage = async () => {
               {HomePageData.get("projects_heading") as string}
             </h1>
         </section>
-        {ProjectContent.projects
+        {ProjectsData
           .filter((project) => project.isFeatured)
           .map((project, index) => (
             <FeaturedProjectCard
               key={index}
-              title={project.title}
-              description={project.description}
-              labels={project.labels}
-              ctaHref={project.ctaHref || ""}
-              ctaGithub={project.ctaGithub || ""}
-              image={project.image}
+              title={project.name || ""}
+              description={project.summary || ""}
+              labels={project.stack || []}
+              ctaHref={project.link || ""}
+              ctaGithub={project.code || ""}
+              image={project.cover}
               isFeatured={project.isFeatured}
             />
           ))}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {ProjectContent.projects &&
-            ProjectContent.projects
+          {ProjectsData
               .filter((project) => !project.isFeatured)
               .map((project, index) => (
                 <ProjectCard
                   key={index}
-                  title={project.title}
-                  description={project.description}
-                  labels={project.labels}
-                  ctaHref={project.ctaHref || ""}
-                  ctaGithub={project.ctaGithub || ""}
+                  title={project.name || ""}
+                  description={project.summary || ""}
+                  labels={project.stack || []}
+                  ctaHref={project.link || ""}
+                  ctaGithub={project.code || ""}
                 />
               ))}
         </div>

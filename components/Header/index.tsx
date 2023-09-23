@@ -27,7 +27,7 @@ export const MenuClosedComponent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5 }}
       exit={{ opacity: 0 }}
-      className="container sticky top-0 z-[9999] mx-auto flex flex-row items-center space-x-6 md:divide-x divide-white p-2 px-6 backdrop-blur-md md:p-8">
+      className="container sticky top-0 z-[9999] mx-auto flex flex-row items-center space-x-6 p-2 px-6 backdrop-blur-md md:p-8">
       <div className="flex items-center">
         <Link href="/" scroll={false}>
           <Image
@@ -39,14 +39,7 @@ export const MenuClosedComponent = () => {
         </Link>
       </div>
       <nav className="flex flex-col md:flex-row space-x-4 pl-6 md:justify-between w-full">
-        <ul className="hidden md:flex gap-x-8">
-          <li className="cursor-pointer text-lg font-bold uppercase text-white"><Link href="#aboutme">About</Link></li>
-
-          <li className="cursor-pointer text-lg font-bold uppercase text-white"><Link href="#projects">Projects</Link></li>
-          <li className="cursor-pointer text-lg font-bold uppercase text-white"><Link href="#contact">Contact</Link></li>
-        </ul>
-
-        <ul className="flex space-x-5 md:space-x-10 justify-end md:justify-center">
+        <ul className="ml-auto flex space-x-5 md:space-x-10 justify-end md:justify-center">
           {SOCIAL_LINKS.map((item, index) => (
             <li key={index} className="flex flex-row space-x-4">
               <Link

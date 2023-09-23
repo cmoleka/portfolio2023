@@ -12,6 +12,7 @@ const config = {
   images: {
    domains: [
 'images.unsplash.com',
+'www.notion.so',
    ]
   }
   /* If trying out the experimental appDir, comment the i18n config out

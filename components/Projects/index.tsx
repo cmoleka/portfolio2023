@@ -132,7 +132,7 @@ export const FeaturedProjectCard = ({
           </div>
           <div className="absolute top-0 left-0 z-10 h-full w-full bg-turquoise-dark/90 mix-blend-multiply"></div>
           <Image
-            src={image || ""}
+            src={`/${image}`}
             alt="Golooka"
             className="overla rounded-md object-cover"
             fill

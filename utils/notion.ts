@@ -1,6 +1,6 @@
 import { Client } from "@notionhq/client";
 // import { NotionToMarkdown } from "notion-to-md";
-import { HomeContent } from "@pTypes/notionTypes";
+import type { HomeContent, ProjectsContent } from "@pTypes/notionTypes";
 
 // Notion client
 export const notionClient = new Client({
@@ -22,4 +22,12 @@ export const getPageContent = async () => {
     });
 
     return contentMap
+}
+
+export const getProjects = async () => {
+    // call the notion API at /api/content endpoint.
+    const res = await fetch("http://localhost:3000/api/projects")
+    const data = await res.json()
+    const parsedData: ProjectsContent = JSON.parse(data)
+    return parsedData
 }
