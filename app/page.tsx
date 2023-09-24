@@ -2,7 +2,6 @@ import HeroComponent from "@components/Hero";
 import {
   CardWithTextAndOneButton,
 } from "@components/Cards";
-import ProjectContent from "@content/ProjectsPageContent";
 import { FeaturedProjectCard, ProjectCard } from "@components/Projects";
 import { PageWrapper } from "@components/PageWrapper";
 import { getPageContent, getProjects } from "@utils/notion";
