@@ -21,7 +21,7 @@ const FooterComponent = async () => {
       </section>
       <footer className="container mx-auto flex w-full flex-row items-center">
         <div className="flex w-full flex-row justify-center space-x-4 p-2">
-          <p className="text-base capitalize text-white">
+          <p className="text-xs capitalize text-white/60">
           {FooterData.get("footer_text") as string}
           </p>
         </div>

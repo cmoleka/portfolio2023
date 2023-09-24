@@ -12,7 +12,7 @@ const HomePage = async () => {
 
   return (
     <PageWrapper>
-      <div className="container mx-auto w-full space-y-10 py-6 px-6">
+      <div className="flex flex-col container mx-auto w-full gap-y-11 py-6 px-6">
         <HeroComponent
         label={HomePageData.get("hero_sub_heading") as string}
           title={HomePageData.get("hero_heading") as string}

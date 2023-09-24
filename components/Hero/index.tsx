@@ -30,11 +30,13 @@ const HeroComponent = ({
         initial={{ y: "100%", opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.7, duration: 0.5 }}
-        className="flex w-full flex-col space-y-6 md:w-5/6">
-        <label className="text-sm uppercase text-turquoise">
+        className="flex w-full flex-col gap-y-8 md:w-5/6">
+        <div className="flex flex-col gap-y-2">
+        <label className="text-sm capitalize text-turquoise">
           {label}
         </label>
-        <h1 className="text-4xl font-bold text-white   md:text-6xl">{title}</h1>
+        <h1 className="text-4xl font-bold text-white md:text-6xl">{title}</h1>
+        </div>
         <p className="text-base text-white/75">{description}</p>
         <ButtonDark buttonHref={ctaHref} label={ctaLabel} />
       </m.div>

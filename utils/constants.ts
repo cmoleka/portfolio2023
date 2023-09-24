@@ -1,7 +1,7 @@
 // Web site constants and default configuration
 
 export const SITE_METADATA = {
-  title: "CMS - Carlo Moleka: Software Engineer",
+  title: "Carlo Moleka Sambea: Software Engineer & Data Scientist",
   description:
     "Explore the portfolio of Carlo Moleka Sambea, a full stack web developer specializing in building and deploying dynamic web applications. From front-end development to back-end engineering, my portfolio showcases my expertise in the latest technologies and my ability to deliver high-quality and performant software solutions.",
   keywords: [
