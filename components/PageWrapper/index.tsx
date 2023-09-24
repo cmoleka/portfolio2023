@@ -10,7 +10,7 @@ interface PageWrapperProps {
   className?: string;
 }
 
-declare const window: any;
+declare const window: Window;
 
 export const PageWrapper: FC<PageWrapperProps> = ({ children, className }) => {
   const pathName = usePathname();

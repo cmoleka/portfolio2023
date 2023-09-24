@@ -10,6 +10,7 @@ export const ProjectCard = ({
   title,
   description,
   labels,
+  tag,
   ctaHref,
   ctaGithub,
 }: ProjectCardProps) => {
@@ -19,15 +20,21 @@ export const ProjectCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 1 }}
       viewport={{ once: true }}
-      className="w-full space-y-4 rounded-md bg-gray-800 p-4 shadow-md"
+      className="flex flex-col w-full gap-y-2 rounded-md bg-gray-800 p-4 shadow-md"
     >
+      <div className="flex flex-col gap-y-1">
+      <label className="text-xs capitalize text-white">{tag}</label>
       <h2 className="text-xl font-bold capitalize text-turquoise">{title}</h2>
+      </div>
+      <div className="flex flex-col gap-y-2">
+
       <p className="text-white/75 md:text-xs lg:text-sm">{description}</p>
       <div className="flex flex-row flex-wrap gap-2">
         {labels &&
           labels.map((label, index) => <Badge key={index} label={label} />)}
       </div>
-      <div className="flex flex-row gap-6">
+          </div>
+      <div className="flex gap-6 mt-auto">
         {ctaGithub && (
           <Link
             href={{
@@ -132,7 +139,7 @@ export const FeaturedProjectCard = ({
           </div>
           <div className="absolute top-0 left-0 z-10 h-full w-full bg-turquoise-dark/90 mix-blend-multiply"></div>
           <Image
-            src={image || ""}
+            src={`/${image}`}
             alt="Golooka"
             className="overla rounded-md object-cover"
             fill
