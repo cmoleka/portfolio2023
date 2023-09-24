@@ -11,7 +11,7 @@ export const notionClient = new Client({
 // Get page Content
 export const getPageContent = async () => {
     // call the notion API at /api/content endpoint.
-    const res = await fetch("/api/content")
+    const res = await fetch(process.env.VERCEL_URL + "/api/content")
     const data = await res.json()
     const parsedData: HomeContent = JSON.parse(data)
 
@@ -26,7 +26,7 @@ export const getPageContent = async () => {
 
 export const getProjects = async () => {
     // call the notion API at /api/content endpoint.
-    const res = await fetch("/api/projects")
+    const res = await fetch(process.env.VERCEL_URL + "/api/projects")
     const data = await res.json()
     const parsedData: ProjectsContent = JSON.parse(data)
     return parsedData
