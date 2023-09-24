@@ -33,7 +33,7 @@ export const SITE_METADATA = {
   url: "https://carlomoleka.com",
   author: "Carlo Moleka",
   metaImage: "/assets/og-image.png",
-} as const;
+};
 
 export const SOCIAL_LINKS = [
   {
