@@ -6,9 +6,6 @@ import FooterComponent from "@components/Footer";
 
 
 const RootLayout = ({ children }: LayoutProps) => {
-
-
-
   return (
     <html lang="en">
       <head />

@@ -6,7 +6,6 @@ import { FeaturedProjectCard, ProjectCard } from "@components/Projects";
 import { PageWrapper } from "@components/PageWrapper";
 import { getPageContent, getProjects } from "@utils/notion";
 
-
 const HomePage = async () => {
   const HomePageData = await getPageContent()
   const ProjectsData = await getProjects()
