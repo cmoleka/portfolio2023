@@ -1,6 +1,5 @@
 import { Client } from "@notionhq/client";
-// import { NotionToMarkdown } from "notion-to-md";
-import type { HomeContent, ProjectsContent } from "@pTypes/notionTypes";
+import type { HomeContent, ProjectsContent, ProjectsRows } from "@pTypes/notionTypes";
 
 // Notion client
 export const notionClient = new Client({
@@ -11,13 +10,21 @@ export const notionClient = new Client({
 // Get page Content
 export const getPageContent = async () => {
     // call the notion API at /api/content endpoint.
-    const res = await fetch(process.env.VERCEL_URL + "/api/content")
-    const data = await res.json()
-    const parsedData: HomeContent = JSON.parse(data)
+    const { results } = await notionClient.databases.query({
+        database_id: process.env.NOTION_CONTENT_DATABASE_ID || '',
+    });
+
+    // @ts-ignore
+    const rows = results.map((res) => res.properties) as ContentRow[]
+
+    const rowsStructured: HomeContent = rows.map((row) => ({
+        id: row.id.title[0]?.text.content,
+        content: row.content.rich_text[0]?.text.content,
+    }));
 
     // Create a Map from the HomeContent array
     const contentMap = new Map<string | undefined, string | undefined>();
-    parsedData.forEach(item => {
+    rowsStructured.forEach(item => {
         contentMap.set(item.id, item.content);
     });
 
@@ -26,8 +33,24 @@ export const getPageContent = async () => {
 
 export const getProjects = async () => {
     // call the notion API at /api/content endpoint.
-    const res = await fetch(process.env.VERCEL_URL + "/api/projects")
-    const data = await res.json()
-    const parsedData: ProjectsContent = JSON.parse(data)
-    return parsedData
+    const { results } = await notionClient.databases.query({
+        database_id: process.env.NOTION_PROJECTS_DATABASE_ID || '',
+    });
+
+    // @ts-ignore
+    const rows = results.map((res) => res.properties) as ProjectsRows[]
+
+    const rowsStructured: ProjectsContent = rows.map((row) => ({
+        name: row.Name.title[0]?.text.content,
+        date: row.projectDate.created_time,
+        tag: row.projectTag.select.name,
+        stack: row.projectStack.multi_select.map((item) => item.name),
+        isFeatured: row.projectFeatured.checkbox,
+        code: row.projectCode.url || "",
+        link: row.projectLink.url || "",
+        cover: row.projectCover.url || "",
+        summary: row.projectSummary.rich_text[0]?.text.content,
+    }));
+
+    return rowsStructured
 }
