@@ -9,7 +9,6 @@ import TWITTERLOGO from "@assets/icons/twitter-logo.png";
 import { motion as m, AnimatePresence } from "framer-motion";
 
 export const HeaderComponent = () => {
-
   return (
     <>
       <AnimatePresence mode="wait">
@@ -27,7 +26,8 @@ export const MenuClosedComponent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5 }}
       exit={{ opacity: 0 }}
-      className="container sticky top-0 z-[9999] mx-auto flex flex-row items-center space-x-6 p-2 px-6 backdrop-blur-md md:p-8">
+      className="container sticky top-0 z-[9999] mx-auto flex flex-row items-center space-x-6 p-2 px-6 backdrop-blur-md md:p-8"
+    >
       <div className="flex items-center">
         <Link href="/" scroll={false}>
           <Image
@@ -38,8 +38,8 @@ export const MenuClosedComponent = () => {
           />
         </Link>
       </div>
-      <nav className="flex flex-col md:flex-row space-x-4 pl-6 md:justify-between w-full">
-        <ul className="ml-auto flex space-x-5 md:space-x-10 justify-end md:justify-center">
+      <nav className="flex w-full flex-col space-x-4 pl-6 md:flex-row md:justify-between">
+        <ul className="ml-auto flex justify-end space-x-5 md:justify-center md:space-x-10">
           {SOCIAL_LINKS.map((item, index) => (
             <li key={index} className="flex flex-row space-x-4">
               <Link
@@ -50,13 +50,7 @@ export const MenuClosedComponent = () => {
                 className="relative h-auto w-7 md:h-6 md:w-6"
               >
                 <Image
-                  src={
-                    item.label === "GitHub"
-                      ? GITHUBLOGO
-                      : item.label === "Twitter"
-                        ? TWITTERLOGO
-                        : LINKEDINLOGO
-                  }
+                  src={item.label === "GitHub" ? GITHUBLOGO : LINKEDINLOGO}
                   alt={item.label}
                   width={24}
                   height={24}
@@ -67,6 +61,5 @@ export const MenuClosedComponent = () => {
         </ul>
       </nav>
     </m.header>
-
-  )
-}
+  );
+};
