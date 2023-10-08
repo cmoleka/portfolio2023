@@ -5,7 +5,6 @@ import Link from "next/link";
 import { SOCIAL_LINKS } from "@utils/constants";
 import GITHUBLOGO from "@assets/icons/github-logo.png";
 import LINKEDINLOGO from "@assets/icons/linkedin-logo.png";
-import TWITTERLOGO from "@assets/icons/twitter-logo.png";
 import { motion as m, AnimatePresence } from "framer-motion";
 
 export const HeaderComponent = () => {
