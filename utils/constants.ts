@@ -37,10 +37,6 @@ export const SITE_METADATA = {
 
 export const SOCIAL_LINKS = [
   {
-    label: "Twitter",
-    href: "https://twitter.com/carlomoleka",
-  },
-  {
     label: "GitHub",
     href: "https://github.com/cmoleka",
   },
